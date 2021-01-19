@@ -17,3 +17,5 @@ Data used in the paper.
 - Lake Mead simulation
 - CAP allocation reduction
 - Demand
+
+Folder 'gpcd_regression' includes R scripts for the gpcd regression discussed in Section 4.3.2
