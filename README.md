@@ -22,7 +22,11 @@ https://arxiv.org/pdf/2005.07811.pdf
 
 3. node_information.pkl includes corresponding node information as python dictionary
 - node_information.pkl's keys = node number (0, 1, 2, ...)
-- Each node has three keys: "ancestor", "descendant", "rhs"
+- Each node has three keys: 
+     
+     - "ancestor": ancestor of the node
+     - "descendant": descendant of the node
+     - "rhs": right hand side of the node
 
       e.g: node number = 0
 
