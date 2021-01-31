@@ -18,9 +18,7 @@ https://arxiv.org/pdf/2005.07811.pdf
 - CAP allocation reduction
 - Demand
 
-2. Folder 'gpcd_regression' includes R scripts for the gpcd regression discussed in Section 4.3.2
-
-3. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD
+2. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD
 
       e.g: Stage, Node,    CAP, Population,            Climate_RCP_GPCD
        
