@@ -4,14 +4,10 @@ https://arxiv.org/pdf/2005.07811.pdf
 
 1. Data used in the paper.
 
-- Historical July Population
-- HistoricFamily Units  &  Ratio (Available upon request for academic research purpose only.)
-- Historical_population_gpcd_monthly
-- Historical_population_gpcd_year
 - Monthly CMIP5 tasmax (C) 
 - Monthly CMIP5 pr (mm)
 - Avg GPCD of Year: calculated with regression 
-- Yearly Population RESIN
+- Yearly Population RESIN - Available upon request for academic research purpose only.
 - Yearly Population Tucson
 - 2007 Interim Guidelines
 - Lake Mead simulation
