@@ -19,3 +19,21 @@ https://arxiv.org/pdf/2005.07811.pdf
       e.g: Stage, Node,    CAP, Population,            Climate_RCP_GPCD
        
                1,    0, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG
+
+3. node_information.pkl includes corresponding node information as python dictionary
+- key = node number (0, 1, 2, ...)
+- Each node has three keys: "ancestor", "descendant", "rhs"
+
+      e.g: node number = 0
+
+          import pickle
+    
+          with open('node_information.pkl', 'rb') as f:
+    
+            node_information = pickle.load(f)
+            
+          >>>  node_information[0]["ancestor"]
+          >>>  node_information[0]["descendant"]
+          >>>  node_information[0]["rhs"]
+
+
