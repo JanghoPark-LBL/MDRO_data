@@ -21,7 +21,7 @@ https://arxiv.org/pdf/2005.07811.pdf
                1,    0, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG
 
 3. node_information.pkl includes corresponding node information as python dictionary
-- key = node number (0, 1, 2, ...)
+- node_information.pkl's keys = node number (0, 1, 2, ...)
 - Each node has three keys: "ancestor", "descendant", "rhs"
 
       e.g: node number = 0
