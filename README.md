@@ -2,7 +2,7 @@
 This repository provides some public data used in "A Multistage Distributionally Robust Optimization Approach to Water Allocation under Climate Uncertainty"
 https://arxiv.org/pdf/2005.07811.pdf
 
-Data used in the paper.
+1. Data used in the paper.
 
 - Historical July Population
 - HistoricFamily Units  &  Ratio (Available upon request for academic research purpose only.)
@@ -18,4 +18,10 @@ Data used in the paper.
 - CAP allocation reduction
 - Demand
 
-Folder 'gpcd_regression' includes R scripts for the gpcd regression discussed in Section 4.3.2
+2. Folder 'gpcd_regression' includes R scripts for the gpcd regression discussed in Section 4.3.2
+
+3. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD
+
+      e.g: Stage, Node,    CAP, Population,            Climate_RCP_GPCD
+       
+               1,    0, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG
