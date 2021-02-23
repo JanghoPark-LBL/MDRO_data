@@ -90,7 +90,7 @@ https://arxiv.org/pdf/2005.07811.pdf
           - Supply Scenarios
             - CAP water supply = [node_information[node_number]["rhs"][59+60*i] for i in range(0,8)]
 
-      e.g: node_number = 1 # 2-stage, year= 2019–2026.
+      e.g: node_number = 1 # 2nd stage, year= 2019–2026, CAP=Normal, Population=WISP, Climate_RCP_GPCD=csiro_mk3_6_0_1_rcp26_HighG
 
           >>> import pickle
           >>> with open('node_information.pkl', 'rb') as f:
