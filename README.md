@@ -2,7 +2,7 @@
 This repository provides some public data used in "A Multistage Distributionally Robust Optimization Approach to Water Allocation under Climate Uncertainty"
 https://arxiv.org/pdf/2005.07811.pdf.
 
-1. Data used in the paper (MDRO_data/data.xlsx)
+**1. Data used in the paper (MDRO_data/data.xlsx)**
 
 - Monthly CMIP5 tasmax (C) [Monthly Maximum Surface Air Temperature (deg C)]
 - Monthly CMIP5 pr (mm/month) [Monthly Precipitation Rate (mm/month)]
@@ -14,13 +14,13 @@ https://arxiv.org/pdf/2005.07811.pdf.
 - CAP allocation reduction [Nominal probabilities of water allotment scenarios per climate model]
 - Yearly predicted demand per demand zone [high (WISP)/low (TAZ) population]
 
-2. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD
+**2. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD**
 
       e.g: Stage, Node,    CAP, Population,            Climate_RCP_GPCD
        
                1,    0, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG
 
-3. node_information.pkl includes corresponding node information as python dictionary
+**3. node_information.pkl includes corresponding node information as python dictionary**
 - node_information.pkl's keys = node number (0, 1, 2, ..., 224640)
 - Each node has three keys: 
      
