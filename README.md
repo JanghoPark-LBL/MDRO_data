@@ -25,7 +25,7 @@ https://arxiv.org/pdf/2005.07811.pdf
 - Each node has three keys: 
      
      - "ancestor": ancestor of the node (returns -1 at node 0, stage 1)
-     - "descendant": descendant of the node (returns -1 at nodes in stage 5)
+     - "descendant": descendant of the node (returns -1 at nodes in the final stage 5)
      - "rhs": right hand side of the node
       - at node 0: there are 60 rhs (1 years)
       - all other nodes (node_number in (1, 2, ..., 224640)): there are 60*8 rhs (8 years)
