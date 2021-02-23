@@ -4,15 +4,15 @@ https://arxiv.org/pdf/2005.07811.pdf.
 
 1. Data used in the paper (MDRO_data/data.xlsx)
 
-- Monthly CMIP5 tasmax (C) 
-- Monthly CMIP5 pr (mm)
-- Avg GPCD of Year: calculated with regression 
-- Yearly Population RESIN - Available upon request for academic research purpose only.
-- Yearly Population Tucson
+- Monthly CMIP5 tasmax (C) [Monthly Maximum Surface Air Temperature (deg C)]
+- Monthly CMIP5 pr (mm/month) [Monthly Precipitation Rate (mm/month)]
+- Avg GPCD of Year: calculated with regression per climate model [high/low GPCD regressions]
+- Yearly Predicted Population Study Area - Available upon request for academic research purpose only
+- Yearly Predicted Population Tucson
 - 2007 Interim Guidelines
-- Lake Mead simulation
-- CAP allocation reduction
-- Demand
+- Lake Mead simulation - Available upon request for academic research purpose only
+- CAP allocation reduction [Nominal probabilities of water allotment scenarios per climate model]
+- Yearly predicted demand per demand zone [high (WISP)/low (TAZ) population]
 
 2. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD
 
