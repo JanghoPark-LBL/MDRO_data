@@ -2,7 +2,7 @@
 This repository provides some public data used in "A Multistage Distributionally Robust Optimization Approach to Water Allocation under Climate Uncertainty"
 https://arxiv.org/pdf/2005.07811.pdf
 
-1. Data used in the paper.
+1. Data used in the paper (MDRO_data/data.xlsx)
 
 - Monthly CMIP5 tasmax (C) 
 - Monthly CMIP5 pr (mm)
