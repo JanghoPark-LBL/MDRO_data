@@ -1,34 +1,34 @@
 # MDRO_water
 This repository provides some public data used in "A Multistage Distributionally Robust Optimization Approach to Water Allocation under Climate Uncertainty"
-https://arxiv.org/pdf/2005.07811.pdf
+https://arxiv.org/pdf/2005.07811.pdf.
 
-1. Data used in the paper.
+**1. Data used in the paper (MDRO_data/data.xlsx)**
 
-- Monthly CMIP5 tasmax (C) 
-- Monthly CMIP5 pr (mm)
-- Avg GPCD of Year: calculated with regression 
-- Yearly Population RESIN - Available upon request for academic research purpose only.
-- Yearly Population Tucson
+- Monthly CMIP5 tasmax (C) [Monthly Maximum Surface Air Temperature (deg C)]
+- Monthly CMIP5 pr (mm/month) [Monthly Precipitation Rate (mm/month)]
+- Avg GPCD of Year: calculated with regression per climate model [high/low GPCD regressions]
+- Yearly Predicted Population Study Area - Available upon request for academic research purpose only
+- Yearly Predicted Population Tucson
 - 2007 Interim Guidelines
-- Lake Mead simulation
-- CAP allocation reduction
-- Demand
+- Lake Mead simulation - Available upon request for academic research purpose only
+- CAP allocation reduction [Nominal probabilities of water allotment scenarios per climate model]
+- Yearly predicted demand per demand zone [high (WISP)/low (TAZ) population]
 
-2. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD
+**2. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD**
 
       e.g: Stage, Node,    CAP, Population,            Climate_RCP_GPCD
        
                1,    0, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG
 
-3. node_information.pkl includes corresponding node information as python dictionary
+**3. node_information.pkl includes corresponding node information as python dictionary**
 - node_information.pkl's keys = node number (0, 1, 2, ..., 224640)
 - Each node has three keys: 
      
      - "ancestor": ancestor of the node (returns -1 at node 0, stage 1)
-     - "descendant": descendant of the node (returns -1 at nodes in stage 5)
-     - "rhs": right hand side of the node
-      - at node 0: there are 60 rhs (1 years)
-      - all other nodes (node_number in (1, 2, ..., 224640)): there are 60*8 rhs (8 years)
+     - "descendant": descendant of the node (returns -1 at nodes in the final stage 5)
+     - "rhs": right-hand side of the constraints
+       - at node 0: there are 60 rhs (1 year)
+       - all other nodes (node_number in (1, 2, ..., 224640)): there are 60*8 rhs (8 years)
      
       e.g: node_number = 0
 
@@ -90,7 +90,7 @@ https://arxiv.org/pdf/2005.07811.pdf
           - Supply Scenarios
             - CAP water supply = [node_information[node_number]["rhs"][59+60*i] for i in range(0,8)]
 
-      e.g: node_number = 1 # 2-stage, year= 2019–2026.
+      e.g: node_number = 1 # 2nd stage, year= 2019–2026, CAP=Normal, Population=WISP, Climate_RCP_GPCD=csiro_mk3_6_0_1_rcp26_HighG
 
           >>> import pickle
           >>> with open('node_information.pkl', 'rb') as f:
