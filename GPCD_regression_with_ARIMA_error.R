@@ -24,14 +24,14 @@ arima_year <- with(TrainData, arima(GPCD, order = c(1,0,0),seasonal = list(order
 # get the coefficients and p-values and save
 lower_pval=(1-pnorm(abs(arima_fit$coef)/sqrt(diag(arima_year$var.coef))))*2
 lower_coefficients_table = data.frame(c(arima_year$coef),c(lower_pval))
-write.table(lower_coefficients_table, "C:/Users/Jangho Park/Desktop/WRR/regression/R/result/lower_coefficients_table.txt", sep="\t")
+write.table(lower_coefficients_table, "lower_coefficients_table.txt", sep="\t")
 
 # higher-GPCD:  GLS with ARIMA (1,0,0) ×(1,0,0)11 errors
 arima_byear <- with(TrainData, arima(GPCD, order = c(1,0,0),seasonal = list(order = c(1, 0, 0),period=11),include.mean = FALSE, xreg = cbind(Tem, Pre, M1,M2,M3,M4,M5,M6,M7,M8,M9,M10,M11,M12,Byear)))
 # get the coefficients and p-values and save
 higher_pval=(1-pnorm(abs(arima_fit$coef)/sqrt(diag(arima_byear$var.coef))))*2
 higher_coefficients_table = data.frame(c(arima_byear$coef),c(higher_pval))
-write.table(higher_coefficients_table, "C:/Users/Jangho Park/Desktop/WRR/regression/R/result/higher_coefficients_table.txt", sep="\t")
+write.table(higher_coefficients_table, "higher_coefficients_table.txt", sep="\t")
 
 # Predict GPCD - assume there are 24 different Tem and Pre pairs
 # GPCD_year_predict: prediction with lower-GPCD
