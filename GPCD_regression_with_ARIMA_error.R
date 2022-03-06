@@ -6,9 +6,9 @@ require("nlme")
 #	                        M1 (indicator variable Jan),	M2 (indicator variable Feb),	M3 (indicator variable Mar),	M4 (indicator variable Apr),	M5 (indicator variable May),	M6 (indicator variable Jun),	
 #                         M7 (indicator variable Jul),  M8 (indicator variable Aug),	M9 (indicator variable Sep),	M10	(indicator variable Oct) ,M11 (indicator variable Nov),	M12 (indicator variable Dec),	
 #                         Year (Year of data)
-# Allxnew.csv
+# Testing_X_values
 # dataset for predictoin
-# Year, Byear, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12 are the same as before
+# Year, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12 are the same as before
 # Temperatrue and precipitation are from 
 #         Brekke, L., Thrasher, B. L., Maurer, E. P., and Pruitt, T. (2013). Downscaled CMIP3 and CMIP5 climate projections: Release of downscaled
 #         CMIP5 climate projections, comparison with preceding information, and summary of user needs. U.S. Department of the Interior, Bureau of
@@ -17,7 +17,7 @@ require("nlme")
 
 # Load data
 TrainData <- read.csv(file="regression_input_data.csv", header=TRUE, sep=",")
-PredictionData <- read.csv(file="Allxnew.csv", header=TRUE, sep=",")
+PredictionData <- read.csv(file="Testing_X_values.csv", header=TRUE, sep=",")
 
 # lower-GPCD fit:  GLS with ARIMA (1,0,0) ×(1,0,0)11 errors
 arima_year <- with(TrainData, arima(GPCD, order = c(1,0,0),seasonal = list(order = c(1, 0, 0),period=11),include.mean = FALSE, xreg = cbind(Tem, Pre, M1,M2,M3,M4,M5,M6,M7,M8,M9,M10,M11,M12,Year)))
@@ -43,6 +43,11 @@ write.table(higher_coefficients_table, "higher_coefficients_table.txt", sep="\t"
 # GPCD_byear_predict: prediction with higher-GPCD
 GPCD_year_predict=NULL 
 GPCD_byear_predict =NULL
+
+# Restrict year variable 
+PredictionData$Byear = PredictionData$Year 
+PredictionData$Byear[PredictionData$Byear <= 2004] <- 2004
+PredictionData$Byear[PredictionData$Byear >= 2011] <- 2011
 for (i in 1:24){
   Tem = PredictionData[[paste(c("Tem", i), collapse = "")]]
   Pre = PredictionData[[paste(c("Pre", i), collapse = "")]]
