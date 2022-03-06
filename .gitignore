@@ -1,11 +1,8 @@
-
-data.csv
-Allxnew.csv
-.DS_Store
-GPCD_byear_predict.txt
-GPCD_year_predict.txt
-higher_coefficients_table.txt
-lower_coefficients_table.txt
-regression_input_data.numbers
+Testing_X_values.csv
 regression_input_data.csv
+lower_coefficients_table.txt
+higher_coefficients_table.txt
+GPCD_year_predict.txt
+GPCD_byear_predict.txt
 .Rhistory
+.DS_Store
