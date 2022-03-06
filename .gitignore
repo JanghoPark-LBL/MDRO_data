@@ -6,3 +6,6 @@ GPCD_byear_predict.txt
 GPCD_year_predict.txt
 higher_coefficients_table.txt
 lower_coefficients_table.txt
+regression_input_data.numbers
+regression_input_data.csv
+.Rhistory

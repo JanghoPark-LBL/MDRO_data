@@ -1,11 +1,11 @@
 require("nlme")
 
-# data.csv
+# regression_input_data.csv
 # historical dataest for fit
 # columns (explanation): GPCD (monthly GPCD), Tem (temperature),	Pre (precipitation),
 #	                        M1 (indicator variable Jan),	M2 (indicator variable Feb),	M3 (indicator variable Mar),	M4 (indicator variable Apr),	M5 (indicator variable May),	M6 (indicator variable Jun),	
 #                         M7 (indicator variable Jul),  M8 (indicator variable Aug),	M9 (indicator variable Sep),	M10	(indicator variable Oct) ,M11 (indicator variable Nov),	M12 (indicator variable Dec),	
-#                         Year (year for lower-GPCD fit),	Byear (year for higher-GPCD fit)
+#                         Year (Year of data)
 # Allxnew.csv
 # dataset for predictoin
 # Year, Byear, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12 are the same as before
@@ -16,7 +16,7 @@ require("nlme")
 # Define each Temperature and Precipitation pair as  Temi and Prei (e.g, Tem1, Tem2, Pre1, Pre2, ...)
 
 # Load data
-TrainData <- read.csv(file="data.csv", header=TRUE, sep=",")
+TrainData <- read.csv(file="regression_input_data.csv", header=TRUE, sep=",")
 PredictionData <- read.csv(file="Allxnew.csv", header=TRUE, sep=",")
 
 # lower-GPCD fit:  GLS with ARIMA (1,0,0) ×(1,0,0)11 errors
@@ -27,8 +27,10 @@ lower_coefficients_table = data.frame(c(arima_year$coef),c(lower_pval))
 write.table(lower_coefficients_table, "lower_coefficients_table.txt", sep="\t")
 
 # higher-GPCD:  GLS with ARIMA (1,0,0) ×(1,0,0)11 errors
-print(TrainData$Byear)
-
+# Restrict year variable 
+TrainData$Byear = TrainData$Year 
+TrainData$Byear[TrainData$Byear <= 2004] <- 2004
+TrainData$Byear[TrainData$Byear >= 2011] <- 2011
 
 arima_byear <- with(TrainData, arima(GPCD, order = c(1,0,0),seasonal = list(order = c(1, 0, 0),period=11),include.mean = FALSE, xreg = cbind(Tem, Pre, M1,M2,M3,M4,M5,M6,M7,M8,M9,M10,M11,M12,Byear)))
 # get the coefficients and p-values and save
