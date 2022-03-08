@@ -1,5 +1,9 @@
 require("nlme")
 
+# Restrict year variable Please fill out the below y_low and y_upper for higher-GPCD
+y_low = 
+y_upper = 
+
 # regression_input_data.csv
 # historical dataest for fit
 # columns (explanation): GPCD (monthly GPCD), Tem (temperature),	Pre (precipitation),
@@ -29,8 +33,8 @@ write.table(lower_coefficients_table, "lower_coefficients_table.txt", sep="\t")
 # higher-GPCD:  GLS with ARIMA (1,0,0) ×(1,0,0)11 errors
 # Restrict year variable 
 TrainData$Byear = TrainData$Year 
-TrainData$Byear[TrainData$Byear <= 2004] <- 2004
-TrainData$Byear[TrainData$Byear >= 2011] <- 2011
+TrainData$Byear[TrainData$Byear <= y_low] <- y_low
+TrainData$Byear[TrainData$Byear >= y_upper] <- y_upper
 
 arima_byear <- with(TrainData, arima(GPCD, order = c(1,0,0),seasonal = list(order = c(1, 0, 0),period=11),include.mean = FALSE, xreg = cbind(Tem, Pre, M1,M2,M3,M4,M5,M6,M7,M8,M9,M10,M11,M12,Byear)))
 # get the coefficients and p-values and save
@@ -46,8 +50,8 @@ GPCD_byear_predict =NULL
 
 # Restrict year variable 
 PredictionData$Byear = PredictionData$Year 
-PredictionData$Byear[PredictionData$Byear <= 2004] <- 2004
-PredictionData$Byear[PredictionData$Byear >= 2011] <- 2011
+PredictionData$Byear[PredictionData$Byear <= y_low] <- y_low
+PredictionData$Byear[PredictionData$Byear >= y_upper] <- y_upper
 for (i in 1:24){
   Tem = PredictionData[[paste(c("Tem", i), collapse = "")]]
   Pre = PredictionData[[paste(c("Pre", i), collapse = "")]]
