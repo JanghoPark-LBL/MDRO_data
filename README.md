@@ -95,6 +95,7 @@ https://arxiv.org/pdf/2005.07811.pdf.
           >>> import pickle
           >>> with open('node_information.pkl', 'rb') as f:
           ...     node_information = pickle.load(f)
+          >>> node_number = 1
           >>> [node_information[node_number]["rhs"][16+60*i] for i in range(0,8)] # Potable Demand at Zone C, year= 2019–2026.
           [1871.9194261409048, 2121.361589402013, 2231.636089694466, 2347.1466501979003, 2505.0550503281997, 2611.9635977465846, 2701.0129084795044, 2771.0289527900745]
           >>> [node_information[node_number]["rhs"][59+60*i] for i in range(0,8)] # CAP water supply, year= 2019–2026.
