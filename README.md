@@ -7,7 +7,7 @@ https://arxiv.org/pdf/2005.07811.pdf.
 - Monthly CMIP5 tasmax (C) [Monthly Maximum Surface Air Temperature (deg C)]
 - Monthly CMIP5 pr (mm/month) [Monthly Precipitation Rate (mm/month)]
 - Avg GPCD of Year: calculated with regression per climate model [high/low GPCD regressions]
-- Yearly Predicted Population Study Area - Available upon request for academic research purpose only
+- Yearly Predicted Total Population in Study Area (The zonal populations are available upon request)
 - Yearly Predicted Population Tucson
 - 2007 Interim Guidelines
 - Lake Mead simulation - Available upon request for academic research purpose only

@@ -1,3 +1,8 @@
+# This R script provides two monthly Gallons Per Capita per Day (GPCD) models in Section 4.3.2 Water Demand Prediction - Building Statistical Models 
+# in "A Multistage Distributionally Robust Optimization Approach to Water Allocation under Climate Uncertainty", https://arxiv.org/pdf/2005.07811.pdf.
+# Both models use Generalized Least Squares with seasonal AutoRegressive Integrated Moving Average (ARIMA), ARIMA (1, 0, 0)× (1, 0, 0)_(11) errors.
+
+# Load Linear and Nonlinear Mixed Effects Models Package
 require("nlme")
 
 # Restrict year variable Please fill out the below y_low and y_upper for higher-GPCD
@@ -6,12 +11,12 @@ y_upper =
 
 # regression_input_data.csv
 # historical dataest for fit
-# columns (explanation): GPCD (monthly GPCD), Tem (temperature),	Pre (precipitation),
+# columns (explanation): GPCD (monthly GPCD), Tem (temperature -- average daily temperature in Celsius),	Pre (precipitation – average daily precipitation in mm),
 #	                        M1 (indicator variable Jan),	M2 (indicator variable Feb),	M3 (indicator variable Mar),	M4 (indicator variable Apr),	M5 (indicator variable May),	M6 (indicator variable Jun),	
 #                         M7 (indicator variable Jul),  M8 (indicator variable Aug),	M9 (indicator variable Sep),	M10	(indicator variable Oct) ,M11 (indicator variable Nov),	M12 (indicator variable Dec),	
 #                         Year (Year of data)
 # Testing_X_values
-# dataset for predictoin
+# dataset for prediction
 # Year, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12 are the same as before
 # Temperatrue and precipitation are from 
 #         Brekke, L., Thrasher, B. L., Maurer, E. P., and Pruitt, T. (2013). Downscaled CMIP3 and CMIP5 climate projections: Release of downscaled
