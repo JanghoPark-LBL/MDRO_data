@@ -14,13 +14,19 @@ https://arxiv.org/pdf/2005.07811.pdf.
 - CAP allocation reduction [Nominal probabilities of water allotment scenarios per climate model]
 - Yearly predicted demand per demand zone [high (WISP)/low (TAZ) population]
 
-**2. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD**
+**2. GPCD_regression_with_ARIMA_error.R**
+
+The R script provides two monthly Gallons Per Capita per Day (GPCD) models in Section 4.3.2 Water Demand Prediction - Building Statistical Models 
+in "A Multistage Distributionally Robust Optimization Approach to Water Allocation under Climate Uncertainty", https://arxiv.org/pdf/2005.07811.pdf. Both models use Generalized Least Squares with seasonal AutoRegressive Integrated Moving Average (ARIMA), ARIMA (1, 0, 0)× (1, 0, 0)_(11) errors.
+
+
+**3. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD**
 
       e.g: Stage, Node,    CAP, Population,            Climate_RCP_GPCD
        
                1,    0, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG
 
-**3. node_information.pkl includes corresponding node information as python dictionary**
+**4. node_information.pkl includes corresponding node information as python dictionary**
 - node_information.pkl's keys = node number (0, 1, 2, ..., 224640)
 - Each node has three keys: 
      
