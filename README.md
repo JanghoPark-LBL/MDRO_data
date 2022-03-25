@@ -20,11 +20,12 @@ The R script provides two monthly Gallons Per Capita per Day (GPCD) models in Se
 in "A Multistage Distributionally Robust Optimization Approach to Water Allocation under Climate Uncertainty", https://arxiv.org/pdf/2005.07811.pdf. Both models use Generalized Least Squares with seasonal AutoRegressive Integrated Moving Average (ARIMA), ARIMA (1, 0, 0)× (1, 0, 0)_(11) errors.
 
 
-**3. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD**
+**3. scenario.txt file includes information of Stage, Node, CAP, Population, Climate_RCP_GPCD, Ancestor Node, Nominal Probability at the node**
 
-      e.g: Stage, Node,    CAP, Population,            Climate_RCP_GPCD
+      e.g: Stage, Node,    CAP, Population,            Climate_RCP_GPCD, Ancestor Node, Nominal Probability
        
-               1,    0, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG
+               1,    0, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG,            -1,       1
+               2,    1, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG,             0,  0.0156
 
 **4. node_information.pkl includes corresponding node information as python dictionary**
 - node_information.pkl's keys = node number (0, 1, 2, ..., 224640)
