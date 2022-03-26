@@ -27,8 +27,12 @@ in "A Multistage Distributionally Robust Optimization Approach to Water Allocati
                1,    0, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG,            -1,       1
                2,    1, Normal,       WISP, csiro_mk3_6_0_1_rcp26_HighG,             0,  0.0156
 
+- Node in (0, 1, 2, ..., 224640)
+- For completeness, we include all possible nodes (including zero-probability nodes) so that in future works these can be used or changed as desired. 
+
 **4. node_information.pkl includes corresponding node information as python dictionary**
 - node_information.pkl's keys = node number (0, 1, 2, ..., 224640)
+- For completeness, we include all possible nodes (including zero-probability nodes) so that in future works these can be used or changed as desired. 
 - Each node has three keys: 
      
      - "ancestor": ancestor of the node (returns -1 at node 0, stage 1)
